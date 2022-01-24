@@ -2,3 +2,7 @@
 	background-color: red;
 	color: #fff;
 }
+
+.select2-dropdown {
+	@apply rounded-b-lg shadow-md;
+}
