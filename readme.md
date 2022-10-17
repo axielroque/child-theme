@@ -1,6 +1,6 @@
 # WP-Boilerplate
 
-This is a basic boilerplate frontend for Wordpress.
+This is a child theme of Twenty Twenty-One and have a basic boilerplate frontend for Wordpress.
 
 ## Installation
 
@@ -12,15 +12,15 @@ npm install
 
 ## Usage
 
-```python
-# npm start
-Run de default task for gulp
+```bash
+npm start
+# Run de default task for gulp
 
-# gulp serve
-Run de development enviroment & watch all changes
+gulp serve
+#Run de development enviroment & watch all changes
 
-# gulp build --prod=true
-Run build to export files to production enviroment
+gulp build --prod=true
+# Run build to export files to production enviroment
 ```
 
 ## Contributing
@@ -28,7 +28,3 @@ Run build to export files to production enviroment
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 Please make sure to update tests as appropriate.
-
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
