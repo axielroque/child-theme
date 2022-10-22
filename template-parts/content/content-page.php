@@ -1,3 +1,16 @@
-<h1 class="text-3xl font-bold underline">
-  Hello world!
-</h1>
+<?php
+/**
+ * Template part for displaying page content in page.php
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ *
+ * @package WordPress
+ */
+
+?>
+
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<div class="wrapper">
+		<?php the_content(); ?>
+	</div><!-- .entry-content -->
+</article><!-- #post-<?php the_ID(); ?> -->

@@ -2,6 +2,13 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
+function theme_support_function() {
+	// add supports align for blocks in CMS
+	add_theme_support('align-wide');
+}
+
+add_action( 'after_setup_theme', 'theme_support_function' );
+
 /**
  * Enqueue our stylesheet and javascript file
  */
@@ -21,7 +28,7 @@ function child_theme_enqueue_styles() {
 	}
   wp_localize_script( 'custom-scripts', 'ajax_object', array( 'ajaxurl' =>   admin_url( 'admin-ajax.php' ) ) );
 }
-add_action( 'wp_enqueue_scripts', 'child_theme_enqueue_styles' );
+add_action( 'wp_enqueue_scripts', 'child_theme_enqueue_styles', 99 );
 
 
 /**

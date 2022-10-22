@@ -2,7 +2,8 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-/* admin bar fix */
-body.admin-bar {
-  max-height: calc(100vh - 32px);
+.testimonials blockquote:before,
+.testimonials blockquote:after {
+  content: '';
+  content: none;
 }
