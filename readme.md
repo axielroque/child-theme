@@ -1,10 +1,12 @@
 # WP-Boilerplate
 
-This is a child theme of Twenty Twenty-One and have a basic boilerplate frontend for Wordpress.
+This is a child theme of Twenty Twenty-One and have a basic boilerplate frontend
+with Vite for Wordpress.
 
 ## Installation
 
-Use the package manager [npm](https://www.npmjs.com/) to install all dependencies.
+Use the package manager [npm](https://www.npmjs.com/) to install all
+dependencies.
 
 ```bash
 npm install
@@ -12,19 +14,13 @@ npm install
 
 ## Usage
 
-```bash
-npm start
-# Run de default task for gulp
+> Development enviroment `npm run dev`
 
-gulp serve
-#Run de development enviroment & watch all changes
-
-gulp build --prod=true
-# Run build to export files to production enviroment
-```
+> Production enviroment `npm run build`
 
 ## Contributing
 
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+Pull requests are welcome. For major changes, please open an issue first to
+discuss what you would like to change.
 
 Please make sure to update tests as appropriate.
