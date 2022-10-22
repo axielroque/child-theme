@@ -5,7 +5,7 @@ const rename = require("gulp-rename");
 const sass = require("gulp-sass")(require("sass"));
 const sourcemaps = require("gulp-sourcemaps");
 const cleanCss = require("gulp-clean-css");
-const postCss = require("gulp-clean-css");
+const purgecss = require("gulp-purgecss");
 const autoprefixer = require("autoprefixer");
 const uglify = require("gulp-uglify");
 const webpack = require("webpack-stream");
@@ -29,19 +29,26 @@ function browserServe(done) {
 }
 
 function taskStyles() {
-	return src("src/css/main.scss")
-		.pipe(gulpif(!PRO, sourcemaps.init()))
+	const tailwindcss = require("tailwindcss");
+	const postcss = require("gulp-postcss");
+	return src("src/css/main.css")
+		.pipe(sourcemaps.init())
 		.pipe(sass().on("error", sass.logError))
-		.pipe(postCss([autoprefixer({ grid: true })]))
+		.pipe(postcss([tailwindcss("./tailwind.config.js"), autoprefixer]))
 		.pipe(
 			gulpif(
 				PRO,
 				cleanCss({ debug: true }, (details) => {
-					console.log(`${details.name}: ${details.stats.originalSize}`);
-					console.log(`${details.name}: ${details.stats.minifiedSize}`);
+					console.log(
+						`${details.name}: ${details.stats.originalSize}`
+					);
+					console.log(
+						`${details.name}: ${details.stats.minifiedSize}`
+					);
 				})
 			)
 		)
+		.pipe(purgecss({ content: ["**/*.html", "**/*.php"] }))
 		.pipe(gulpif(!PRO, sourcemaps.write()))
 		.pipe(server.stream())
 		.pipe(dest("dist/css"));
@@ -106,14 +113,17 @@ function whatchForChanges() {
 		["./src/**/*", "!src/{img,js,css}", "!src/{img,js,css}/**/*"],
 		taskCopy
 	);
+	watch("./**/*.php", browserReload);
 	watch("./src/js/**/*.js", taskScripts, browserReload);
 }
 exports.whatchForChanges = whatchForChanges;
 
 function taskCopy() {
-	return src(["src/**/*", "!src/{img,js,css}", "!src/{img,js,css}/**/*"]).pipe(
-		dest("dist")
-	);
+	return src([
+		"src/**/*",
+		"!src/{img,js,css}",
+		"!src/{img,js,css}/**/*",
+	]).pipe(dest("dist"));
 }
 exports.taskCopy = taskCopy;
 
