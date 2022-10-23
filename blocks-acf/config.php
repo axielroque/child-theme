@@ -32,30 +32,27 @@ foreach (glob(get_stylesheet_directory() . '/blocks-acf/acf/fields/*.php') as $a
 function gtb_block_preview($block): array
 {
     return is_null(get_field('gtb_preview_use_img')) || !get_field('gtb_preview_use_img') ?
-        array(
-            'is_preview' => false,
-            'cover' => ''
-        ) :
-        array(
-            'is_preview' => true,
-            'cover' => get_stylesheet_directory() . sprintf('/blocks-acf/block-preview/%s/%s.%s',
-                    $block['category'],
-                    $block['name'],
-                    is_null(get_field('gtb_preview_img_ext')) ? 'png' : get_field('gtb_preview_img_ext')
-                )
-        );
+    array(
+			'is_preview' => false,
+			'cover' => ''
+		) :
+		array(
+			'is_preview' => true,
+			'cover' => get_stylesheet_directory_uri() . sprintf('/blocks-acf/block-preview/%s/%s.%s',
+				$block['category'],
+				$block['name'],
+				is_null(get_field('gtb_preview_img_ext')) ? 'png' : get_field('gtb_preview_img_ext')
+			)
+		);
 }
 
-
-// add supports align for blocks in CMS
-add_theme_support('align-wide');
 /**
  * load style css in blocks cms
  */
 add_action('enqueue_block_editor_assets', 'mytheme_block_styles');
-function mytheme_block_styles()
-{
-    // wp_enqueue_style('block-styles', get_template_directory_uri() . '/css/theme.min.css' );
-    // wp_enqueue_script('block-script', get_template_directory_uri() . '/js/theme.min.js', array('jquery'), '', true );
-    
+function mytheme_block_styles(){
+	$the_theme = wp_get_theme();
+	$theme_styles  = "/dist/main.css";
+
+	wp_enqueue_style( 'child-theme-styles', get_stylesheet_directory_uri() . $theme_styles, array(), $the_theme->get( 'Version' ) );
 }
