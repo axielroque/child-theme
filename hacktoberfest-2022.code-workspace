@@ -1,0 +1,28 @@
+{
+  "folders": [
+	{
+		"path": "../../../../../../../hacktoberfest-2022"
+	},
+	{
+		"path": "../../../../../../../Ena/projects/yard-sale-platzi"
+	},
+	{
+		"path": "../../../../../../../Ena/aniel porfolio"
+	},
+	{
+		"path": "../../../../../../github-card-react"
+	},
+	{
+		"path": "../../../../../../../../Downloads/react-github-card"
+	},
+	{
+		"path": "../../../../../../react-sheets"
+	},
+	{
+		"path": "."
+	}
+],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "aniel porfolio"
+  }
+}
