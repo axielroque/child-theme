@@ -45,7 +45,9 @@ if (have_rows('time_line_list')): ?>
                 : ''; ?>
               
             </h3>
-            <time class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">Released on <?php echo $date; ?></time>
+            <time class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500"><?php echo __(
+              'Released on' . ' ' . $date
+            ); ?></time>
             <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400"> <?php echo esc_html(
               $description
             ); ?></p>
