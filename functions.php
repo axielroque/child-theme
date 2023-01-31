@@ -17,8 +17,8 @@ function child_theme_enqueue_styles() {
 	$the_theme = wp_get_theme();
 
 	// Grab asset urls.
-	$theme_styles  = "/dist/main.css";
-	$theme_scripts = "/dist/main.js";
+	$theme_styles  = "/assets/css/styles.css";
+	$theme_scripts = "/assets/js/index.js";
 
 	wp_enqueue_style( 'child-theme-styles', get_stylesheet_directory_uri() . $theme_styles, array(), $the_theme->get( 'Version' ) );
 	wp_enqueue_script( 'jquery' );
