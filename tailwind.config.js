@@ -4,6 +4,7 @@ module.exports = {
     './*.php',
     './inc/**/*.php',
     './templates/**/*.php',
+    './templates-parts/**/*.php',
     './blocks-acf/templates-blocks/**/*.php'
   ],
   darkMode: 'class',

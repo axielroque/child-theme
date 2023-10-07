@@ -7,3 +7,22 @@
   content: '';
   content: none;
 }
+
+footer .widget-area {
+  margin-top: 0 !important;
+  padding: 0.5rem !important;
+  min-width: 100%;
+}
+
+footer .widget-area .widget_block {
+  max-height: max-content;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+footer .widget-title {
+  @apply mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white;
+}
+footer .widget > *:last-child {
+  margin-bottom: 1rem !important;
+}
