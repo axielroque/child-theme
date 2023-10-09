@@ -1,4 +1,4 @@
-# WP-Boilerplate
+# WP-Boilerplate [![PHPCS check](https://github.com/axielroque/child-theme/actions/workflows/phpcs.yml/badge.svg)](https://github.com/axielroque/child-theme/actions/workflows/phpcs.yml)
 
 This is a child theme of Twenty Twenty-One and have a basic boilerplate frontend
 with Vite for Wordpress.
@@ -17,6 +17,10 @@ npm install
 > Development enviroment `npm run dev`
 
 > Production enviroment `npm run build`
+>
+> Run php code standard 'Required Composer'
+> Linter `composer lint:wpcs`
+> Auto FIx `composer fix:wpcs`
 
 ## Contributing
 
