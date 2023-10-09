@@ -1,0 +1,16 @@
+name: PHPCS check
+
+on: push
+
+jobs:
+  phpcs:
+      name: PHPCS
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v2
+        - name: Install dependencies
+          working-directory: ./
+          run: composer install --dev --prefer-dist --no-progress --no-suggest
+        - name: Run PHPCS
+          working-directory: ./
+          run: composer lint:wpcs
