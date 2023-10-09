@@ -7,10 +7,9 @@
  * @since Twenty Twenty-One 1.0
  */
 
-if (is_active_sidebar('sidebar-2')): ?>
-
-  <aside class="widget-area my-0 md:my-2 lg:col-span-1 flex flex-col gap-2">
-		<?php dynamic_sidebar('sidebar-2'); ?>
+if ( is_active_sidebar( 'sidebar-2' ) ) : ?>
+	<aside class="widget-area my-0 md:my-2 lg:col-span-1 flex flex-col gap-2">
+		<?php dynamic_sidebar( 'sidebar-2' ); ?>
 	</aside><!-- .widget-area -->
-
-	<?php endif;
+	<?php 
+	endif;
