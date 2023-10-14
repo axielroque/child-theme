@@ -1,4 +1,6 @@
-# WP-Boilerplate [![PHPCS check](https://github.com/axielroque/child-theme/actions/workflows/phpcs.yml/badge.svg)](https://github.com/axielroque/child-theme/actions/workflows/phpcs.yml)
+# WP-Boilerplate 
+
+[![PHPCS check](https://github.com/axielroque/child-theme/actions/workflows/main.yml/badge.svg)](https://github.com/axielroque/child-theme/actions/workflows/main.yml)
 
 This is a child theme of Twenty Twenty-One and have a basic boilerplate frontend
 with Vite for Wordpress.
